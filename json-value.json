@@ -1,0 +1,20 @@
+[
+  {
+    "category": "reference",
+    "author": "Nigel Rees",
+    "title": "Sayings of the Century",
+    "price": {
+      "value": 8.95,
+      "currency": "USD"
+    },
+  },
+  {
+    "category": "fiction",
+    "author": "Evelyn Waugh",
+    "title": "Sword of Honour",
+    "price": {
+      "value": 12.99,
+      "currency": "USD"
+    },
+  }
+]
