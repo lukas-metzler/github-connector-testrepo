@@ -1,0 +1,19 @@
+{
+  "service": "generic-service",
+  "featureFlags": {
+    "newUI": false,
+    "betaMode": true
+  },
+  "logging": {
+    "level": "INFO",
+    "json": true
+  },
+  "rateLimits": {
+    "perSecond": 100,
+    "burst": 200
+  },
+  "timeouts": {
+    "connectMs": 100,
+    "readMs": 1000
+  }
+}
