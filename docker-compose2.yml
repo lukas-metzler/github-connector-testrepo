@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  api:
+    image: dynatrace/api:${API_VERSION:-1.2.7}
+    ports: ["8080:8080"]
+    environment:
+      ENV_ID: ${DYNATRACE_ENV_ID}
+      API_TOKEN: ${DYNATRACE_API_TOKEN}
+    restart: unless-stopped
+
+  db:
+    image: postgres:${DB_VERSION:-16}-alpine
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME:-dynatrace}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    restart: unless-stopped
+
+  cache:
+    image: redis:${REDIS_VERSION:-7}-alpine
+    ports: ["6379:6379"]
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
